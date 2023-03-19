@@ -11,13 +11,11 @@ AR_1 <- function(n=10, u=0, p=0.5, x_0=0, gauss_var=1)
 { 
   if(gauss_var < 0 )
   {
-    cat("ERROR: negative noise variance")
-    return -1
+    stop("ERROR: negative noise variance")
   }
   if(n <=1)
   {
-    cat("ERROR: number of periods should be atleast 2")
-    return -1
+    stop("ERROR: number of periods should be atleast 2")
   }
   # Initializing vector
   x <- vector(mode = "numeric", length = n)
